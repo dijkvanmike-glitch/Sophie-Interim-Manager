@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" width="900" height="1125" role="img" aria-label="Plaatshouder voor een portretfoto van Ronald Hijdra">
+  <defs>
+    <linearGradient id="fond" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#123152"/>
+      <stop offset="1" stop-color="#0B2239"/>
+    </linearGradient>
+    <radialGradient id="licht" cx="0.42" cy="0.32" r="0.55">
+      <stop offset="0" stop-color="#F4F1EA" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#F4F1EA" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="korrel2">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="1125" fill="url(#fond)"/>
+  <rect width="900" height="1125" fill="url(#licht)"/>
+
+  <!-- silhouet hoofd en schouders -->
+  <g>
+    <path d="M450,270 a165,175 0 1,0 0.1,0 Z" fill="#081C30"/>
+    <path d="M110,1125 C150,840 320,725 450,725 C580,725 750,840 790,1125 Z" fill="#081C30"/>
+    <path d="M110,1125 C150,840 320,725 450,725 C580,725 750,840 790,1125" fill="none" stroke="#C6A66B" stroke-opacity="0.28" stroke-width="2.5"/>
+    <path d="M450,270 a165,175 0 1,0 0.1,0" fill="none" stroke="#C6A66B" stroke-opacity="0.22" stroke-width="2.5"/>
+  </g>
+
+  <rect width="900" height="1125" filter="url(#korrel2)" opacity="0.45"/>
+
+  <!-- plaatshouder-label -->
+  <g font-family="Arial, sans-serif" font-size="20" letter-spacing="1">
+    <rect x="32" y="1062" width="11" height="11" fill="#C6A66B"/>
+    <text x="56" y="1073" fill="#AAB4BE" opacity="0.8">Plaatshouder — portret Ronald · assets/hijdra/ronald.jpg</text>
+  </g>
+</svg>

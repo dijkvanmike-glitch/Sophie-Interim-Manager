@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Richting B — Architectonisch en zakelijk · Hijdra Advies &amp; Projectmanagement</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blauw-diep: #061525;
+      --blauw:      #0B2239;
+      --wit:        #F4F1EA;
+      --brons:      #C6A66B;
+      --grijs:      #AAB4BE;
+      --lijn:       rgba(244, 241, 234, 0.09);
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans:  'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--sans);
+      background: var(--blauw-diep);
+      color: var(--wit);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    :focus-visible { outline: 2px solid var(--brons); outline-offset: 3px; }
+
+    /* ---- Scherm met raster ---- */
+    .scherm {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .raster {
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(to right, var(--lijn) 1px, transparent 1px);
+      background-size: 25% 100%;
+      background-position: -1px 0;
+    }
+    .kruis {
+      position: absolute;
+      color: rgba(198, 166, 107, 0.55);
+      font-size: 15px; font-weight: 400;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .container { width: 100%; max-width: 1320px; margin: 0 auto; padding: 0 48px; }
+
+    /* ---- Navigatie ---- */
+    .nav { position: relative; z-index: 2; border-bottom: 1px solid rgba(244, 241, 234, 0.14); background: var(--blauw-diep); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 78px; }
+    .merk { display: flex; align-items: center; gap: 16px; }
+    .merk__monogram {
+      width: 38px; height: 38px;
+      border: 1px solid var(--brons);
+      display: grid; place-items: center;
+      font-family: var(--serif); font-size: 22px; color: var(--brons);
+    }
+    .merk__tekst { display: flex; flex-direction: column; }
+    .merk__naam { font-size: 13.5px; font-weight: 700; letter-spacing: 0.24em; }
+    .merk__sub { font-size: 9px; font-weight: 500; letter-spacing: 0.22em; color: var(--grijs); text-transform: uppercase; }
+    .nav__links { display: flex; align-items: center; gap: 34px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+    .nav__links a { color: rgba(244, 241, 234, 0.75); transition: color 0.25s; }
+    .nav__links a:hover { color: var(--brons); }
+    .nav__contact { border: 1px solid rgba(198, 166, 107, 0.55); padding: 9px 18px; color: var(--brons) !important; }
+    .nav__contact:hover { background: rgba(198, 166, 107, 0.1); }
+
+    /* ---- Hoofdgrid ---- */
+    .midden { position: relative; z-index: 1; flex: 1; display: flex; align-items: center; padding: 56px 0; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; align-items: center; }
+    .inhoud { grid-column: 1 / 7; }
+
+    .index {
+      font-size: 11.5px; font-weight: 600; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--grijs);
+      margin-bottom: 26px;
+      display: flex; align-items: baseline; gap: 12px;
+    }
+    .index strong { color: var(--brons); font-weight: 700; }
+    .boventekst {
+      font-size: 11.5px; font-weight: 700; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--brons);
+      margin-bottom: 22px;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(40px, 3.9vw, 54px);
+      line-height: 1.1;
+    }
+    .intro {
+      margin-top: 22px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--grijs);
+      max-width: 27em;
+    }
+    .acties { margin-top: 34px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .knop-primair {
+      display: inline-block;
+      background: var(--brons);
+      color: var(--blauw-diep);
+      font-weight: 700; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 15px 28px;
+      transition: background 0.25s;
+    }
+    .knop-primair:hover { background: #d6b980; }
+    .knop-secundair {
+      display: inline-block;
+      border: 1px solid rgba(244, 241, 234, 0.3);
+      font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 14px 28px;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .knop-secundair:hover { border-color: var(--brons); color: var(--brons); }
+
+    /* datastrook */
+    .data {
+      margin-top: 52px;
+      border-top: 1px solid rgba(244, 241, 234, 0.16);
+      padding-top: 24px;
+      display: grid; grid-template-columns: repeat(3, auto); gap: 40px;
+      justify-content: start;
+    }
+    .data div { display: flex; flex-direction: column; gap: 6px; }
+    .data dt { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brons); }
+    .data dd { font-size: 13.5px; font-weight: 500; color: var(--wit); }
+    .data dd small { display: block; font-size: 11.5px; color: var(--grijs); font-weight: 500; margin-top: 2px; }
+
+    /* ---- Technisch beeldkader ---- */
+    .figuur { grid-column: 8 / 13; position: relative; }
+    .figuur__kader {
+      position: relative;
+      border: 1px solid rgba(244, 241, 234, 0.22);
+      padding: 12px;
+    }
+    .figuur__kader::before, .figuur__kader::after {
+      content: ""; position: absolute; width: 14px; height: 14px;
+      border-color: var(--brons); border-style: solid;
+    }
+    .figuur__kader::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+    .figuur__kader::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+    .figuur__beeld {
+      aspect-ratio: 4 / 3.4;
+      background: url('../assets/hijdra/placeholder-detail.svg') center / cover no-repeat;
+    }
+    .figuur__onderschrift {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-top: 14px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--grijs);
+    }
+    .figuur__onderschrift strong { color: var(--brons); font-weight: 700; }
+    /* maatstreepjes boven het kader */
+    .maatlat {
+      display: flex; justify-content: space-between;
+      margin-bottom: 12px; height: 8px;
+    }
+    .maatlat span { width: 1px; height: 8px; background: rgba(244, 241, 234, 0.3); }
+    .maatlat span:nth-child(odd) { height: 5px; align-self: flex-end; }
+
+    /* ---- Onderbalk ---- */
+    .onderbalk { position: relative; z-index: 1; border-top: 1px solid rgba(244, 241, 234, 0.14); }
+    .onderbalk__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 54px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+      color: var(--grijs); text-transform: uppercase;
+    }
+    .onderbalk__inner .brons { color: var(--brons); }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+    @media (max-width: 900px) {
+      .container { padding: 0 24px; }
+      .raster { background-size: 50% 100%; }
+      .nav__links a:not(.nav__contact) { display: none; }
+      .grid { grid-template-columns: 1fr; gap: 48px; }
+      .inhoud, .figuur { grid-column: 1 / -1; }
+      .midden { padding: 40px 0 56px; align-items: flex-start; }
+      h1 { font-size: clamp(34px, 9vw, 42px); }
+      .data { gap: 20px 28px; grid-template-columns: 1fr 1fr; }
+      .onderbalk__inner { font-size: 9.5px; flex-wrap: wrap; gap: 4px 14px; height: auto; padding: 12px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scherm">
+    <div class="raster" aria-hidden="true"></div>
+    <span class="kruis" style="left:25%; top:78%;" aria-hidden="true">+</span>
+    <span class="kruis" style="left:50%; top:14%;" aria-hidden="true">+</span>
+    <span class="kruis" style="left:75%; top:88%;" aria-hidden="true">+</span>
+
+    <header class="nav">
+      <div class="container nav__inner">
+        <a href="#" class="merk" aria-label="Hijdra Advies en Projectmanagement">
+          <span class="merk__monogram" aria-hidden="true">H</span>
+          <span class="merk__tekst">
+            <span class="merk__naam">HIJDRA</span>
+            <span class="merk__sub">Advies &amp; Projectmanagement</span>
+          </span>
+        </a>
+        <nav class="nav__links" aria-label="Hoofdmenu">
+          <a href="#diensten">Diensten</a>
+          <a href="#werkwijze">Werkwijze</a>
+          <a href="#over">Over Ronald</a>
+          <a href="#contact" class="nav__contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="midden">
+      <div class="container">
+        <div class="grid">
+          <div class="inhoud">
+            <p class="index"><strong>01</strong> Bestaand vastgoed</p>
+            <p class="boventekst">Onderhoud · verbouwen · projectmanagement</p>
+            <h1>Grip op onderhoud.<br />Regie op verbouwing.</h1>
+            <p class="intro">
+              Praktisch advies en persoonlijke projectbegeleiding voor bestaand
+              vastgoed. Van eerste vraag tot een resultaat waarop u kunt bouwen.
+            </p>
+            <div class="acties">
+              <a href="#contact" class="knop-primair">Bespreek uw project</a>
+              <a href="#werkwijze" class="knop-secundair">Bekijk de werkwijze</a>
+            </div>
+            <dl class="data">
+              <div>
+                <dt>Vestiging</dt>
+                <dd>Hoorn, Noord-Holland</dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>Uitsluitend bestaand vastgoed<small>Geen nieuwbouw</small></dd>
+              </div>
+              <div>
+                <dt>Rol</dt>
+                <dd>Advies · regie · begeleiding</dd>
+              </div>
+            </dl>
+          </div>
+
+          <figure class="figuur">
+            <div class="maatlat" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="figuur__kader">
+              <div class="figuur__beeld" role="img" aria-label="Detail van gevelwerk aan een bestaand gebouw (plaatshouder)"></div>
+            </div>
+            <figcaption class="figuur__onderschrift">
+              <span>Onderhoud &amp; renovatie — bestaand werk</span>
+              <strong>Fig. 01</strong>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </main>
+
+    <div class="onderbalk">
+      <div class="container onderbalk__inner">
+        <span>Hijdra Advies &amp; Projectmanagement</span>
+        <span><span class="brons">52.64° N</span> · 5.06° O — Hoorn</span>
+        <span>hijdra-advies.nl</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
