@@ -13,6 +13,7 @@ via dezelfde link.
 ## Wat zit erin
 
 - `index.html` — de complete website (één pagina)
+- `ronald.html` — profielpagina voor Ronald (invulteksten, zie opmerkingen in het bestand)
 - `css/styles.css` — het premium design
 - `js/script.js` — animaties en interactie
 - `assets/` — foto van Sophie (`assets/sophie.jpg`)

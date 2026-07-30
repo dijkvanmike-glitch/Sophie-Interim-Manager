@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ronald — Professioneel profiel</title>
+  <meta name="description" content="Het professionele profiel van Ronald: ervaring, expertise en contact. Maak kennis en neem vrijblijvend contact op." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Eigen accentkleur voor Ronald: diep petrolblauw i.p.v. goud */
+    :root {
+      --gold:      #2f6f7e;
+      --gold-soft: #58929f;
+    }
+    /* Twee contactblokken i.p.v. drie */
+    .contact__methods { grid-template-columns: repeat(2, 1fr); max-width: 640px; margin-left: auto; margin-right: auto; }
+    @media (max-width: 720px) { .contact__methods { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a href="#hero" class="nav__brand">
+        <span class="nav__monogram">R</span>
+        <span class="nav__name">Ronald</span>
+      </a>
+      <nav class="nav__links" aria-label="Hoofdmenu">
+        <a href="#about">Over Ronald</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#approach">Werkwijze</a>
+        <a href="#contact" class="nav__cta">Contact</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <!-- Vervang de eyebrow door Ronalds vakgebied, bijv. "Projectmanagement · Techniek" -->
+      <p class="hero__eyebrow reveal">Professioneel profiel</p>
+      <h1 class="hero__title reveal">
+        Aangenaam,<br /><em>Ronald</em>.
+      </h1>
+      <!-- Vervang deze introductie door een korte pitch van Ronald -->
+      <p class="hero__lede reveal">
+        Een ervaren professional die werk maakt van resultaat. Op deze pagina
+        lees je wie Ronald is, waar hij goed in is en hoe je met hem in
+        contact komt.
+      </p>
+      <div class="hero__actions reveal">
+        <a href="#contact" class="btn btn--primary">Neem contact op</a>
+        <a href="#about" class="btn btn--ghost">Maak kennis met Ronald</a>
+      </div>
+    </div>
+    <a href="#about" class="hero__scroll" aria-label="Scroll naar beneden">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- About -->
+  <section class="about section" id="about">
+    <div class="container about__grid">
+      <div class="about__media reveal">
+        <div class="about__photo">
+          <!-- Plaats een foto van Ronald als assets/ronald.jpg (verhouding ±4:5) -->
+          <img src="assets/ronald.jpg" alt="Ronald" onerror="this.parentNode.classList.add('about__photo--placeholder'); this.style.display='none';" />
+          <span class="about__photo-fallback">Foto van Ronald<br /><small>plaats als assets/ronald.jpg</small></span>
+        </div>
+      </div>
+      <div class="about__content reveal">
+        <p class="section__eyebrow">Over Ronald</p>
+        <h2 class="section__title">Wie is Ronald?</h2>
+        <!-- Vervang deze alinea's door Ronalds eigen verhaal:
+             achtergrond, ervaring, wat hem drijft. -->
+        <p>
+          Hier komt het verhaal van Ronald: zijn achtergrond, zijn ervaring en
+          wat hem drijft in zijn werk. Vertel wie hij is, wat hij heeft gedaan
+          en waar hij energie van krijgt.
+        </p>
+        <p>
+          Gebruik deze tweede alinea voor wat Ronald onderscheidt: zijn manier
+          van werken, zijn sterkste kwaliteiten en het soort opdrachten of
+          samenwerkingen waar hij naar op zoek is.
+        </p>
+        <ul class="about__traits">
+          <li>Betrouwbaar &amp; betrokken</li>
+          <li>Resultaatgericht</li>
+          <li>Ervaren vakman</li>
+          <li>Prettig in samenwerking</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise -->
+  <section class="expertise section" id="expertise">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__eyebrow">Expertise</p>
+        <h2 class="section__title">Waar Ronald het verschil maakt</h2>
+      </div>
+      <!-- Vervang deze kaarten door Ronalds echte specialismen -->
+      <div class="expertise__grid">
+        <article class="card reveal">
+          <h3>Specialisme één</h3>
+          <p>Beschrijf hier het eerste vakgebied of specialisme van Ronald en wat hij daarin voor anderen betekent.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Specialisme twee</h3>
+          <p>Beschrijf hier een tweede kwaliteit of dienst: wat kan Ronald goed en wat levert dat op?</p>
+        </article>
+        <article class="card reveal">
+          <h3>Specialisme drie</h3>
+          <p>Beschrijf hier een derde sterkte, bijvoorbeeld een branche waarin Ronald veel ervaring heeft.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section class="approach section" id="approach">
+    <div class="container approach__grid">
+      <div class="approach__intro reveal">
+        <p class="section__eyebrow">Werkwijze</p>
+        <h2 class="section__title">Zo werkt<br />Ronald.</h2>
+        <p>Duidelijke afspraken, korte lijnen en werk dat gewoon goed gebeurt.</p>
+      </div>
+      <div class="approach__steps">
+        <div class="step reveal">
+          <span class="step__num">1</span>
+          <div>
+            <h3>Kennismaken</h3>
+            <p>Een eerste gesprek om de vraag en de wensen helder te krijgen.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">2</span>
+          <div>
+            <h3>Plan &amp; afspraken</h3>
+            <p>Een duidelijk voorstel: wat wordt er gedaan, wanneer en tegen welke voorwaarden.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">3</span>
+          <div>
+            <h3>Aan de slag</h3>
+            <p>Ronald gaat aan het werk en houdt je onderweg op de hoogte.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <span class="step__num">4</span>
+          <div>
+            <h3>Opleveren</h3>
+            <p>Netjes afgerond, samen doorgenomen en pas klaar als jij tevreden bent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact section" id="contact">
+    <div class="container contact__inner reveal">
+      <p class="section__eyebrow">Contact</p>
+      <h2 class="section__title">Kom in contact met Ronald</h2>
+      <p class="contact__lede">
+        Vragen, een opdracht of gewoon kennismaken? Stuur een bericht —
+        je krijgt snel antwoord.
+      </p>
+      <!-- Vervang onderstaande gegevens door Ronalds echte e-mailadres en telefoonnummer -->
+      <div class="contact__methods">
+        <a href="mailto:ronald@voorbeeld.nl" class="contact__item">
+          <span class="contact__label">E-mail</span>
+          <span class="contact__value">ronald@voorbeeld.nl</span>
+        </a>
+        <a href="tel:+31600000000" class="contact__item">
+          <span class="contact__label">Telefoon</span>
+          <span class="contact__value">+31 6 00000000</span>
+        </a>
+      </div>
+      <a href="mailto:ronald@voorbeeld.nl" class="btn btn--primary btn--large">Stuur een bericht</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__brand">Ronald</span>
+      <span class="footer__tag">Professioneel profiel</span>
+      <span class="footer__copy">© <span id="year"></span> Ronald</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
