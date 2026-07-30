@@ -219,21 +219,21 @@ ul { list-style: none; }
    Over Ronald
    ============================================================ */
 .over__grid {
-  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  display: grid; grid-template-columns: 280px minmax(0, 1fr);
   gap: clamp(48px, 6vw, 96px); align-items: start;
 }
-.over__media { position: relative; }
-.over__portret { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
-.over__portret img { width: 100%; height: 100%; object-fit: cover; }
-.over__portret::after {
-  content: ""; position: absolute; inset: 0;
-  border: 1px solid rgba(244, 241, 234, 0.12);
-  pointer-events: none;
+.over__media { position: relative; padding-top: 14px; }
+.over__rond { position: relative; width: 232px; height: 232px; }
+.over__rond img {
+  width: 100%; height: 100%;
+  border-radius: 50%; object-fit: cover;
+  filter: grayscale(1);
 }
-.over__media::before {
+.over__rond::before {
   content: ""; position: absolute;
-  inset: -18px 18px 18px -18px;
+  inset: -14px 14px 14px -14px;
   border: 1px solid var(--brons);
+  border-radius: 50%;
   pointer-events: none;
 }
 .over__onderschrift {
@@ -315,7 +315,6 @@ a.contact__waarde:hover { color: var(--brons); border-color: var(--brons); }
   .diensten__grid { grid-template-columns: 1fr; gap: 40px; }
   .werkwijze__grid { grid-template-columns: 1fr 1fr; }
   .over__grid, .contact__grid { grid-template-columns: 1fr; }
-  .over__media { max-width: 420px; }
 }
 
 @media (max-width: 768px) {
