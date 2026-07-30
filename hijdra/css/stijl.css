@@ -1,0 +1,357 @@
+/* ============================================================
+   Hijdra Advies & Projectmanagement — stijl
+   Basis: ontwerprichting A (editorial, beeldgedreven)
+   Kleuren:  #061525  #0B2239  #F4F1EA  #C6A66B  #AAB4BE
+   Letters:  Instrument Serif (koppen) · Manrope (overig)
+   ============================================================ */
+
+:root {
+  --blauw-diep: #061525;
+  --blauw:      #0B2239;
+  --wit:        #F4F1EA;
+  --brons:      #C6A66B;
+  --brons-licht:#D6B980;
+  --grijs:      #AAB4BE;
+  --lijn:       rgba(244, 241, 234, 0.14);
+  --lijn-zacht: rgba(244, 241, 234, 0.09);
+
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans:  'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --maxw: 1280px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--sans);
+  background: var(--blauw-diep);
+  color: var(--wit);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+:focus-visible { outline: 2px solid var(--brons); outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 48px; }
+.sectie { padding: clamp(88px, 10vw, 136px) 0; }
+[id] { scroll-margin-top: 96px; }
+
+/* ---- Gedeelde sectiekoppen ---- */
+.boventekst {
+  display: flex; align-items: center; gap: 14px;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.26em;
+  text-transform: uppercase; color: var(--brons);
+  margin-bottom: 26px;
+}
+.boventekst::before { content: ""; width: 34px; height: 1px; background: var(--brons); flex: none; }
+.sectiekop {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(34px, 3.3vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  max-width: 18em;
+}
+.sectie-intro { margin-top: 20px; font-size: 16.5px; color: var(--grijs); max-width: 36em; }
+
+/* ---- Onthulling bij scrollen (subtiel) ---- */
+.onthul { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.onthul.zichtbaar { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .onthul { opacity: 1; transform: none; transition: none; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* ============================================================
+   Navigatie
+   ============================================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 20;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.nav--gescrold { background: rgba(6, 21, 37, 0.94); border-color: var(--lijn); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+.merk { display: flex; flex-direction: column; gap: 2px; }
+.merk__naam { font-size: 15px; font-weight: 700; letter-spacing: 0.34em; }
+.merk__sub { font-size: 9.5px; font-weight: 500; letter-spacing: 0.26em; color: var(--grijs); text-transform: uppercase; }
+.nav__links { display: flex; align-items: center; gap: 40px; font-size: 14px; font-weight: 500; }
+.nav__links a { color: rgba(244, 241, 234, 0.82); transition: color 0.25s; }
+.nav__links a:hover { color: var(--wit); }
+.nav__contact { border: 1px solid rgba(244, 241, 234, 0.35); padding: 10px 22px; transition: border-color 0.25s, color 0.25s; }
+.nav__contact:hover { border-color: var(--brons); color: var(--brons) !important; }
+.nav__toggle {
+  display: none;
+  background: none; border: 1px solid var(--lijn);
+  width: 44px; height: 44px; cursor: pointer;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.nav__toggle span { width: 18px; height: 1.5px; background: var(--wit); transition: transform 0.25s, opacity 0.25s; }
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; }
+.hero__foto { position: absolute; inset: 0; overflow: hidden; }
+.hero__foto img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(1.3);
+}
+.hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(97deg,
+    rgba(6, 21, 37, 0.97) 0%,
+    rgba(6, 21, 37, 0.88) 36%,
+    rgba(6, 21, 37, 0.45) 68%,
+    rgba(6, 21, 37, 0.12) 100%);
+}
+.hero__midden { position: relative; z-index: 1; flex: 1; display: flex; align-items: center; padding: 168px 0 96px; }
+.hero__tekst { max-width: 640px; }
+.hero__kop {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(46px, 4.8vw, 66px);
+  line-height: 1.07;
+  letter-spacing: -0.01em;
+}
+.hero__kop em { font-style: italic; }
+.hero__intro { margin-top: 26px; font-size: 17.5px; line-height: 1.7; color: var(--grijs); max-width: 30em; }
+.hero__acties { margin-top: 40px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.hero__notitie {
+  margin-top: 48px; padding-top: 22px;
+  border-top: 1px solid var(--lijn);
+  font-size: 13px; color: var(--grijs); max-width: 30em;
+}
+
+/* ---- Knoppen ---- */
+.knop-primair {
+  display: inline-block;
+  background: var(--brons); color: var(--blauw-diep);
+  font-weight: 700; font-size: 14px; letter-spacing: 0.03em;
+  padding: 16px 32px;
+  transition: background 0.25s;
+}
+.knop-primair:hover { background: var(--brons-licht); }
+.knop-secundair {
+  font-weight: 600; font-size: 14.5px;
+  border-bottom: 1px solid rgba(244, 241, 234, 0.4);
+  padding-bottom: 4px;
+  transition: border-color 0.25s, color 0.25s;
+}
+.knop-secundair:hover { color: var(--brons); border-color: var(--brons); }
+
+/* ============================================================
+   Bewijsstrook — ervaring in het kort
+   ============================================================ */
+.bewijs { position: relative; z-index: 1; border-top: 1px solid var(--lijn); background: rgba(6, 21, 37, 0.6); }
+.bewijs__grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.bewijs__item { padding: 34px 40px 34px 0; }
+.bewijs__item + .bewijs__item { border-left: 1px solid var(--lijn-zacht); padding-left: 40px; }
+.bewijs__item h3 { font-size: 14.5px; font-weight: 700; letter-spacing: 0.02em; margin-bottom: 6px; }
+.bewijs__item h3::before { content: "— "; color: var(--brons); }
+.bewijs__item p { font-size: 13.5px; color: var(--grijs); line-height: 1.6; }
+
+/* ============================================================
+   Diensten
+   ============================================================ */
+.diensten__grid {
+  margin-top: 64px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;
+}
+.dienst { border-top: 1px solid var(--lijn); padding-top: 28px; }
+.dienst__nummer { font-family: var(--serif); font-size: 19px; color: var(--brons); display: block; margin-bottom: 18px; }
+.dienst h3 { font-family: var(--serif); font-weight: 400; font-size: 25px; margin-bottom: 14px; }
+.dienst p { font-size: 15px; color: var(--grijs); }
+.dienst ul { margin-top: 18px; display: grid; gap: 9px; }
+.dienst li { font-size: 14px; color: rgba(244, 241, 234, 0.85); padding-left: 20px; position: relative; }
+.dienst li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 9px; height: 1px; background: var(--brons); }
+.diensten__notitie { margin-top: 56px; font-size: 13px; color: var(--grijs); }
+.diensten__notitie::before { content: "— "; color: var(--brons); }
+
+/* ============================================================
+   Beeldband
+   ============================================================ */
+.beeldband { position: relative; height: clamp(300px, 42vw, 480px); overflow: hidden; }
+.beeldband img { width: 100%; height: 100%; object-fit: cover; filter: brightness(1.15); }
+.beeldband::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(6, 21, 37, 0.55) 0%, rgba(6, 21, 37, 0.15) 45%, rgba(6, 21, 37, 0.65) 100%);
+  pointer-events: none;
+}
+.beeldband__onderschrift {
+  position: absolute; left: 0; right: 0; bottom: 26px; z-index: 1;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(244, 241, 234, 0.85);
+}
+
+/* ============================================================
+   Werkwijze
+   ============================================================ */
+.werkwijze { background: var(--blauw); }
+.werkwijze__grid {
+  margin-top: 64px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px;
+}
+.stap { position: relative; border-top: 1px solid var(--lijn); padding-top: 26px; }
+.stap__nummer {
+  font-family: var(--serif); font-size: 42px; line-height: 1;
+  color: var(--brons); display: block; margin-bottom: 20px;
+}
+.stap h3 { font-size: 16.5px; font-weight: 700; margin-bottom: 10px; }
+.stap p { font-size: 14.5px; color: var(--grijs); }
+.werkwijze__slot {
+  margin-top: 64px; padding-top: 28px;
+  border-top: 1px solid var(--lijn);
+  display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+.werkwijze__slot p { font-size: 15px; color: var(--grijs); max-width: 42em; }
+
+/* ============================================================
+   Over Ronald
+   ============================================================ */
+.over__grid {
+  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(48px, 6vw, 96px); align-items: start;
+}
+.over__media { position: relative; }
+.over__portret { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
+.over__portret img { width: 100%; height: 100%; object-fit: cover; }
+.over__portret::after {
+  content: ""; position: absolute; inset: 0;
+  border: 1px solid rgba(244, 241, 234, 0.12);
+  pointer-events: none;
+}
+.over__media::before {
+  content: ""; position: absolute;
+  inset: -18px 18px 18px -18px;
+  border: 1px solid var(--brons);
+  pointer-events: none;
+}
+.over__onderschrift {
+  margin-top: 30px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em;
+  color: var(--grijs);
+  display: flex; align-items: center; gap: 10px;
+}
+.over__onderschrift::before { content: ""; width: 22px; height: 1px; background: var(--brons); flex: none; }
+.over__tekst p { margin-top: 18px; font-size: 16px; color: rgba(244, 241, 234, 0.88); max-width: 36em; }
+.over__tekst p:first-of-type { margin-top: 28px; }
+.over__tekst p strong { color: var(--wit); font-weight: 700; }
+.over__punten { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; }
+.over__punten li { font-size: 14px; color: rgba(244, 241, 234, 0.85); padding-left: 20px; position: relative; }
+.over__punten li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 9px; height: 1px; background: var(--brons); }
+.over__linkedin {
+  margin-top: 36px; display: inline-flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 600;
+  border-bottom: 1px solid rgba(244, 241, 234, 0.4); padding-bottom: 4px;
+  transition: color 0.25s, border-color 0.25s;
+}
+.over__linkedin:hover { color: var(--brons); border-color: var(--brons); }
+
+/* ============================================================
+   Loopbaan
+   ============================================================ */
+.loopbaan { background: var(--blauw); }
+.loopbaan__lijst { margin-top: 56px; border-top: 1px solid var(--lijn); }
+.loopbaan__rij {
+  display: grid; grid-template-columns: 180px minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 24px; padding: 26px 0;
+  border-bottom: 1px solid var(--lijn-zacht);
+}
+.loopbaan__periode { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--brons); }
+.loopbaan__functie h3 { font-size: 15.5px; font-weight: 700; }
+.loopbaan__functie span { display: block; font-size: 13px; color: var(--grijs); margin-top: 3px; }
+.loopbaan__toelichting { font-size: 14px; color: var(--grijs); }
+.loopbaan__voetnoot { margin-top: 28px; font-size: 13px; color: var(--grijs); max-width: 46em; }
+
+/* ============================================================
+   Contact
+   ============================================================ */
+.contact { position: relative; }
+.contact__grid {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(48px, 6vw, 96px); align-items: start;
+}
+.contact__lede { margin-top: 22px; font-size: 16.5px; color: var(--grijs); max-width: 30em; }
+.contact__actie { margin-top: 38px; }
+.contact__gegevens { border-top: 1px solid var(--lijn); }
+.contact__rij {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
+  padding: 22px 0; border-bottom: 1px solid var(--lijn-zacht);
+}
+.contact__label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brons); }
+.contact__waarde { font-size: 15px; font-weight: 500; text-align: right; word-break: break-word; }
+a.contact__waarde { border-bottom: 1px solid rgba(244, 241, 234, 0.3); padding-bottom: 2px; transition: color 0.25s, border-color 0.25s; }
+a.contact__waarde:hover { color: var(--brons); border-color: var(--brons); }
+.contact__notitie { margin-top: 24px; font-size: 13px; color: var(--grijs); }
+.contact__notitie::before { content: "— "; color: var(--brons); }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer { border-top: 1px solid var(--lijn); padding: 40px 0 44px; }
+.footer__inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.footer__blok { display: flex; flex-direction: column; gap: 4px; }
+.footer__merk { font-size: 13px; font-weight: 700; letter-spacing: 0.24em; }
+.footer__sub { font-size: 12px; color: var(--grijs); }
+.footer__links { display: flex; gap: 28px; font-size: 13px; color: var(--grijs); flex-wrap: wrap; }
+.footer__links a { transition: color 0.25s; border-bottom: 1px solid transparent; }
+.footer__links a:hover { color: var(--wit); }
+.footer__meta { width: 100%; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--lijn-zacht); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--grijs); }
+
+/* ============================================================
+   Responsief
+   ============================================================ */
+@media (max-width: 1024px) {
+  .diensten__grid { grid-template-columns: 1fr; gap: 40px; }
+  .werkwijze__grid { grid-template-columns: 1fr 1fr; }
+  .over__grid, .contact__grid { grid-template-columns: 1fr; }
+  .over__media { max-width: 420px; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 24px; }
+  .sectie { padding: 72px 0; }
+
+  .nav__inner { height: 72px; }
+  .nav { background: rgba(6, 21, 37, 0.94); border-color: var(--lijn); }
+  .nav__toggle { display: flex; }
+  .nav__links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start; gap: 0;
+    background: var(--blauw-diep);
+    border-bottom: 1px solid var(--lijn);
+    display: none;
+  }
+  .nav--open .nav__links { display: flex; }
+  .nav__links a { width: 100%; padding: 16px 24px; border-top: 1px solid var(--lijn-zacht); }
+  .nav__links .nav__contact { border: none; color: var(--brons) !important; }
+  .nav--open .nav__toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav--open .nav__toggle span:nth-child(2) { opacity: 0; }
+  .nav--open .nav__toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .hero__midden { padding: 132px 0 72px; }
+  .hero__overlay { background: linear-gradient(180deg, rgba(6,21,37,0.96) 0%, rgba(6,21,37,0.88) 55%, rgba(6,21,37,0.55) 100%); }
+  .hero__kop { font-size: clamp(38px, 10.5vw, 46px); }
+  .hero__intro { font-size: 16px; }
+
+  .bewijs__grid { grid-template-columns: 1fr; }
+  .bewijs__item { padding: 22px 0; }
+  .bewijs__item + .bewijs__item { border-left: none; border-top: 1px solid var(--lijn-zacht); padding-left: 0; }
+
+  .werkwijze__grid { grid-template-columns: 1fr; gap: 32px; }
+  .loopbaan__rij { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
+  .contact__rij { flex-direction: column; gap: 6px; }
+  .contact__waarde { text-align: left; }
+  .over__punten { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Richting A — Editorial renovation · Hijdra Advies &amp; Projectmanagement</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blauw-diep: #061525;
+      --blauw:      #0B2239;
+      --wit:        #F4F1EA;
+      --brons:      #C6A66B;
+      --grijs:      #AAB4BE;
+      --serif: 'Instrument Serif', Georgia, serif;
+      --sans:  'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--sans);
+      background: var(--blauw-diep);
+      color: var(--wit);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    :focus-visible { outline: 2px solid var(--brons); outline-offset: 3px; }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 48px; }
+
+    /* ---- Hero: fotogedreven, volledige hoogte ---- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .hero__foto {
+      position: absolute; inset: 0;
+      background: url('../assets/hijdra/placeholder-gevel.svg') center / cover no-repeat;
+      filter: brightness(1.3);
+    }
+    .hero__overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(97deg,
+        rgba(6, 21, 37, 0.97) 0%,
+        rgba(6, 21, 37, 0.88) 36%,
+        rgba(6, 21, 37, 0.45) 68%,
+        rgba(6, 21, 37, 0.12) 100%);
+    }
+
+    /* ---- Navigatie ---- */
+    .nav { position: relative; z-index: 2; border-bottom: 1px solid rgba(244, 241, 234, 0.14); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+    .merk { display: flex; flex-direction: column; gap: 2px; }
+    .merk__naam { font-size: 15px; font-weight: 700; letter-spacing: 0.34em; }
+    .merk__sub { font-size: 9.5px; font-weight: 500; letter-spacing: 0.26em; color: var(--grijs); text-transform: uppercase; }
+    .nav__links { display: flex; align-items: center; gap: 40px; font-size: 14px; font-weight: 500; }
+    .nav__links a { color: rgba(244, 241, 234, 0.82); transition: color 0.25s; }
+    .nav__links a:hover { color: var(--wit); }
+    .nav__contact {
+      border: 1px solid rgba(244, 241, 234, 0.35);
+      padding: 10px 22px;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .nav__contact:hover { border-color: var(--brons); color: var(--brons) !important; }
+
+    /* ---- Hoofdinhoud ---- */
+    .hero__midden { position: relative; z-index: 1; flex: 1; display: flex; align-items: center; padding: 64px 0; }
+    .hero__tekst { max-width: 640px; }
+    .boventekst {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.26em;
+      text-transform: uppercase; color: var(--brons);
+      margin-bottom: 30px;
+    }
+    .boventekst::before { content: ""; width: 34px; height: 1px; background: var(--brons); }
+    h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(46px, 4.8vw, 66px);
+      line-height: 1.07;
+      letter-spacing: -0.01em;
+    }
+    h1 em { font-style: italic; color: var(--wit); }
+    .intro {
+      margin-top: 26px;
+      font-size: 17.5px;
+      line-height: 1.7;
+      color: var(--grijs);
+      max-width: 30em;
+    }
+    .acties { margin-top: 40px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .knop-primair {
+      display: inline-block;
+      background: var(--brons);
+      color: var(--blauw-diep);
+      font-weight: 700; font-size: 14px; letter-spacing: 0.03em;
+      padding: 16px 32px;
+      transition: background 0.25s;
+    }
+    .knop-primair:hover { background: #d6b980; }
+    .knop-secundair {
+      font-weight: 600; font-size: 14.5px;
+      border-bottom: 1px solid rgba(244, 241, 234, 0.4);
+      padding-bottom: 4px;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .knop-secundair:hover { color: var(--brons); border-color: var(--brons); }
+    .notitie {
+      margin-top: 48px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(244, 241, 234, 0.16);
+      font-size: 13px;
+      color: var(--grijs);
+      max-width: 30em;
+    }
+
+    /* ---- Onderbalk ---- */
+    .onderbalk { position: relative; z-index: 1; border-top: 1px solid rgba(244, 241, 234, 0.14); }
+    .onderbalk__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+      color: var(--grijs); text-transform: uppercase;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 24px; }
+      .nav__links a:not(.nav__contact) { display: none; }
+      .nav__inner { height: 72px; }
+      .hero__overlay { background: linear-gradient(180deg, rgba(6,21,37,0.96) 0%, rgba(6,21,37,0.88) 55%, rgba(6,21,37,0.55) 100%); }
+      h1 { font-size: clamp(38px, 10.5vw, 46px); }
+      .intro { font-size: 16px; }
+      .acties { gap: 20px; }
+      .onderbalk__inner { font-size: 10.5px; flex-wrap: wrap; gap: 4px 16px; height: auto; padding: 14px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero__foto" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <header class="nav">
+      <div class="container nav__inner">
+        <a href="#" class="merk" aria-label="Hijdra Advies en Projectmanagement">
+          <span class="merk__naam">HIJDRA</span>
+          <span class="merk__sub">Advies &amp; Projectmanagement</span>
+        </a>
+        <nav class="nav__links" aria-label="Hoofdmenu">
+          <a href="#diensten">Diensten</a>
+          <a href="#werkwijze">Werkwijze</a>
+          <a href="#over">Over Ronald</a>
+          <a href="#contact" class="nav__contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="hero__midden">
+      <div class="container">
+        <div class="hero__tekst">
+          <p class="boventekst">Onderhoud · verbouwen · projectmanagement</p>
+          <h1>Grip op onderhoud.<br />Regie op <em>verbouwing.</em></h1>
+          <p class="intro">
+            Praktisch advies en persoonlijke projectbegeleiding voor bestaand
+            vastgoed. Van eerste vraag tot een resultaat waarop u kunt bouwen.
+          </p>
+          <div class="acties">
+            <a href="#contact" class="knop-primair">Bespreek uw project</a>
+            <a href="#werkwijze" class="knop-secundair">Bekijk de werkwijze</a>
+          </div>
+          <p class="notitie">Volledige focus op bestaand vastgoed — geen nieuwbouw.</p>
+        </div>
+      </div>
+    </main>
+
+    <div class="onderbalk">
+      <div class="container onderbalk__inner">
+        <span>Hijdra Advies &amp; Projectmanagement</span>
+        <span>Hoorn · Noord-Holland</span>
+        <span>hijdra-advies.nl</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

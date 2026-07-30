@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Plaatshouder voor een detailfoto van materiaal of gevelwerk">
+  <defs>
+    <pattern id="metselwerk" width="240" height="80" patternUnits="userSpaceOnUse">
+      <rect width="240" height="80" fill="#0A2036"/>
+      <rect x="4" y="4" width="112" height="32" fill="#12304B"/>
+      <rect x="124" y="4" width="112" height="32" fill="#143454"/>
+      <rect x="-56" y="44" width="112" height="32" fill="#143454"/>
+      <rect x="64" y="44" width="112" height="32" fill="#12304B"/>
+      <rect x="184" y="44" width="112" height="32" fill="#113048"/>
+    </pattern>
+    <linearGradient id="strijklicht" x1="0" y1="0" x2="1" y2="0.6">
+      <stop offset="0" stop-color="#F4F1EA" stop-opacity="0.12"/>
+      <stop offset="0.55" stop-color="#F4F1EA" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="#061525" stop-opacity="0.35"/>
+    </linearGradient>
+    <filter id="korrel3">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#metselwerk)"/>
+  <!-- enkele afwijkende stenen -->
+  <rect x="484" y="324" width="112" height="32" fill="#C6A66B" opacity="0.18"/>
+  <rect x="244" y="564" width="112" height="32" fill="#1D4266"/>
+  <rect x="844" y="164" width="112" height="32" fill="#0D2438"/>
+  <rect width="1200" height="900" fill="url(#strijklicht)"/>
+  <rect width="1200" height="900" filter="url(#korrel3)" opacity="0.5"/>
+
+  <!-- plaatshouder-label -->
+  <g font-family="Arial, sans-serif" font-size="20" letter-spacing="1">
+    <rect x="30" y="838" width="11" height="11" fill="#C6A66B"/>
+    <text x="54" y="849" fill="#AAB4BE" opacity="0.85">Plaatshouder — detailfoto · assets/hijdra/detail.jpg</text>
+  </g>
+</svg>

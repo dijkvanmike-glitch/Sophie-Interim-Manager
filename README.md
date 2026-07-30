@@ -13,6 +13,8 @@ via dezelfde link.
 ## Wat zit erin
 
 - `index.html` — de complete website (één pagina)
+- `hijdra/` — one-page website voor Hijdra Advies & Projectmanagement (Ronald Hijdra, Hoorn); contactgegevens staan centraal in `hijdra/config.js`, foto's in `hijdra/beeld/` (zie de LEESMIJ daar)
+- `ontwerp/` — de drie ontwerprichtingen voor de Hijdra-site (archief van de ontwerpfase)
 - `css/styles.css` — het premium design
 - `js/script.js` — animaties en interactie
 - `assets/` — foto van Sophie (`assets/sophie.jpg`)

@@ -1,0 +1,31 @@
+FOTO'S VOOR DE HIJDRA-WEBSITE
+=============================
+
+Plaats echte foto's in deze map met exact deze bestandsnamen.
+De site pakt ze automatisch op; tot die tijd tonen nette plaatshouders.
+
+1. gevel.jpg    — held van de site (hero)
+   Liggend, minimaal 1920 x 1200 px.
+   Een bestaand gebouw of renovatieproject, bij voorkeur met avond- of
+   strijklicht. Donkere/rustige delen aan de linkerkant werken het best,
+   daar staat de tekst overheen.
+
+2. ronald.jpg   — portret van Ronald
+   Staand, verhouding 4:5, minimaal 900 x 1125 px.
+   Professioneel portret, rustige achtergrond, geen harde flits.
+
+3. detail.jpg   — beeldband halverwege de pagina
+   Liggend, minimaal 1920 x 800 px.
+   Detail van materiaal of vakwerk: metselwerk, kozijn, voegwerk,
+   tekening op tafel, gereedschap in gebruik.
+
+Aanbevolen extra's (voor later, nog niet in gebruik):
+
+4. werk-1.jpg   — lopend of afgerond onderhouds-/verbouwproject
+5. werk-2.jpg   — tweede projectfoto, ander type werk
+6. gesprek.jpg  — Ronald in gesprek op locatie (opdrachtgeversrol)
+
+Tips voor de fotograaf:
+- Geen bouwhelm-clichés of geposeerde handdrukken.
+- Echt werk, echte locaties; rustige compositie, natuurlijk licht.
+- Lever aan in kleur; de site zorgt zelf voor de donkere sfeer.

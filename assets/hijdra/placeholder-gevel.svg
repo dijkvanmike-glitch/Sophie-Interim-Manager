@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img" aria-label="Plaatshouder voor een projectfoto van een bestaand gebouw">
+  <defs>
+    <linearGradient id="lucht" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#143354"/>
+      <stop offset="1" stop-color="#0B2239"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4F1EA" stop-opacity="0.10"/>
+      <stop offset="0.5" stop-color="#F4F1EA" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="#F4F1EA" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="ramen" width="110" height="150" patternUnits="userSpaceOnUse">
+      <rect width="110" height="150" fill="#0D2740"/>
+      <rect x="20" y="25" width="70" height="100" fill="#16344F"/>
+      <rect x="20" y="25" width="70" height="8" fill="#1C3C5A"/>
+      <line x1="55" y1="25" x2="55" y2="125" stroke="#0B2239" stroke-width="3"/>
+    </pattern>
+    <filter id="korrel">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#lucht)"/>
+
+  <!-- gebouwmassa met ramen -->
+  <rect x="120" y="170" width="1360" height="830" fill="url(#ramen)"/>
+  <!-- verdiepingslijnen -->
+  <g stroke="#F4F1EA" stroke-opacity="0.05" stroke-width="2">
+    <line x1="120" y1="320" x2="1480" y2="320"/>
+    <line x1="120" y1="470" x2="1480" y2="470"/>
+    <line x1="120" y1="620" x2="1480" y2="620"/>
+    <line x1="120" y1="770" x2="1480" y2="770"/>
+  </g>
+  <!-- variatie in ramen: verlicht en donker -->
+  <g>
+    <rect x="360" y="345" width="70" height="100" fill="#20486A"/>
+    <rect x="800" y="195" width="70" height="100" fill="#0A2036"/>
+    <rect x="1130" y="495" width="70" height="100" fill="#20486A"/>
+    <rect x="580" y="645" width="70" height="100" fill="#0A2036"/>
+    <rect x="1350" y="345" width="70" height="100" fill="#C6A66B" opacity="0.22"/>
+    <rect x="250" y="795" width="70" height="100" fill="#C6A66B" opacity="0.14"/>
+  </g>
+  <!-- dakrand en plint -->
+  <rect x="100" y="150" width="1400" height="22" fill="#0A1F33"/>
+  <rect x="120" y="930" width="1360" height="70" fill="#081B2E"/>
+  <!-- lichtinval -->
+  <polygon points="0,0 900,0 300,1000 0,1000" fill="url(#sweep)"/>
+  <!-- vignet -->
+  <rect width="1600" height="1000" fill="#061525" opacity="0.18"/>
+  <rect width="1600" height="1000" filter="url(#korrel)" opacity="0.5"/>
+
+  <!-- plaatshouder-label -->
+  <g font-family="Arial, sans-serif" font-size="21" letter-spacing="1">
+    <rect x="36" y="856" width="12" height="12" fill="#C6A66B"/>
+    <text x="62" y="868" fill="#AAB4BE" opacity="0.75">Plaatshouder — vervang door projectfoto · assets/hijdra/gevel.jpg</text>
+  </g>
+</svg>
