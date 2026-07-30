@@ -2,7 +2,9 @@ FOTO'S VOOR DE HIJDRA-WEBSITE
 =============================
 
 Plaats echte foto's in deze map met exact deze bestandsnamen.
-De site pakt ze automatisch op; tot die tijd tonen nette plaatshouders.
+De site pakt ze automatisch op. Tot die tijd tonen gevel en detail een
+AI-gegenereerd sfeerbeeld (geen echt project); het portret toont een
+nette plaatshouder. Een echte foto in deze map gaat altijd vóór.
 
 1. gevel.jpg    — held van de site (hero)
    Liggend, minimaal 1920 x 1200 px.
