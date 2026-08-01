@@ -4,7 +4,7 @@ Premium website voor het interim-managementbedrijf van Sophie Broers.
 
 ## 🌐 Live website (deel deze link)
 
-**https://dijkvanmike-glitch.github.io/Sophieinterimmanger**
+**https://dijkvanmike-glitch.github.io/Sophie-Interim-Manager**
 
 Deze link is permanent en werkt voor iedereen, op elk apparaat. Pas je iets
 aan en publiceer je opnieuw, dan zien bezoekers automatisch de nieuwste versie
